@@ -15,7 +15,14 @@ def get_student():
 
     first, last, github = hackbright.get_student_by_github(github)
 
-    return f"{github} is the GitHub account for {first} {last}"
+    # return f"{github} is the GitHub account for {first} {last}"
+    # after updating thae function
+    html = render_template("student_info.html",
+                           first=first,
+                           last=last,
+                           github=github)
+    return html
+
 
 if __name__ == "__main__":
     hackbright.connect_to_db(app)
